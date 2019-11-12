@@ -1,0 +1,32 @@
+<html>
+<title>
+</title>
+<head>
+<meta charset="utf-8">
+</head>
+<body>
+<script type="text/javascript">
+limit = 10000;
+sum = [];
+for(i= 0; i < limit ; i++){
+	tempsum = 0;
+	for(x = 1; x < i; x++){
+		if(i % x == 0){
+			tempsum += x;
+		}
+	}
+	sum.push(tempsum);
+}
+for(i = 0; i < limit; i += 1){
+	a = sum[i]
+	b = sum[sum[i]]
+	if(i == b && a != 0 && i > 200 && b != a){
+		console.log("Amicable numbers: ",i,a);
+		sum[i] = 0;
+		sum[sum[i]] = 0;
+	}
+}
+
+</script>
+</body>
+</html>
